@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutMain"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:animateLayoutChanges="true"
+    >
+    <Toolbar
+        android:id="@+id/toolbarViewImage"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:paddingTop="30dp"
+        android:elevation="10dp"
+        android:layout_gravity="top"
+        android:contentInsetStart="0dp"
+        android:background="@color/colorWhiteSmoke"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/viewImageBack"
+                android:layout_width="@dimen/toolbar_icon_size"
+                android:layout_height="@dimen/toolbar_icon_size"
+                android:src="@drawable/arrow_back"
+                android:tint="@color/colorPrimary"
+                android:padding="12dp"
+                android:layout_margin="@dimen/margin_10"
+                android:layout_gravity="top"
+                android:elevation="@dimen/card_elevation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
+
+            <TextView
+                android:id="@+id/photo_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_heading"
+                android:fontFamily="@font/dm_serif_regular"
+                android:layout_margin="@dimen/margin_10"
+                android:layout_gravity="bottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </Toolbar>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.mohansaimanthri.greedyimageengine.utils.extensions.TouchImageView
+            android:id="@+id/viewImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="@string/transition_photo_image"
+            />
+        <!--<com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|bottom"
+            android:elevation="@dimen/card_elevation"
+            android:layout_margin="@dimen/margin_10"
+            app:menu_colorNormal="@color/colorPrimary"
+            app:menu_colorPressed="@color/colorPrimaryDark"
+            app:menu_colorRipple="@color/colorWhiteSmoke"
+            >
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                app:fab_label="@string/download"
+                android:src="@drawable/download_white_smoke"
+                app:fab_colorNormal="@color/colorPrimary"
+                app:fab_colorPressed="@color/colorPrimary"
+                app:fab_colorRipple="@color/colorWhiteSmoke"
+                />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                android:src="@drawable/wallpaper"
+                app:fab_label="Set wallpaper"
+                app:fab_colorNormal="@color/colorPrimary"
+                app:fab_colorPressed="@color/colorPrimary"
+                app:fab_colorRipple="@color/colorWhiteSmoke"
+                />
+        </com.github.clans.fab.FloatingActionMenu>-->
+        <include layout="@layout/layout_bottom_sheet"/>
+        <View android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhiteSmokeTint"
+            android:elevation="5dp"
+            android:id="@+id/tintSearch"
+            android:visibility="gone"
+            />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
